@@ -10,5 +10,7 @@ namespace IMDBAPI.Models
         public int MovieId { get; set; }
         public List<Actor> Actors { get; set; }
         public Producer Producer { get; set; }
+        public string MovieName { get; set; }
+        public DateTime ReleaseDate { get; set; }
     }
 }
