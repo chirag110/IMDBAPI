@@ -20,6 +20,7 @@ namespace IMDBAPI.ViewModel
     public class MovieVMAdd : MovieVM
     {
         public List<Actor> Actors { get; set; }
+        public Producer Producer { get; set; }
     }
     
 }

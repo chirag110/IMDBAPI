@@ -30,7 +30,7 @@ namespace IMDBAPI.Controllers
                 MovieName = movie.MovieName,
                 ReleaseDate = movie.ReleaseDate,
                 ActorNames = movie.Actor_Movies.Select(x => x.Actor.ActorName).ToList(),
-                //ProducerName = movie.ProducerName
+                ProducerName = movie.Producer.ProducerName
             }).ToList() ;
             return movies;
         }
@@ -44,7 +44,7 @@ namespace IMDBAPI.Controllers
                 MovieName = movie.MovieName,
                 ReleaseDate = movie.ReleaseDate,
                 ActorNames = movie.Actor_Movies.Select(x => x.Actor.ActorName).ToList(),
-                //ProducerName = movie.ProducerName
+                ProducerName = movie.Producer.ProducerName
             }).FirstOrDefault();
             return movie;
             
@@ -58,11 +58,12 @@ namespace IMDBAPI.Controllers
             {
                 MovieName = movie.MovieName,
                 ReleaseDate = movie.ReleaseDate,
-                //ProducerName = movie.ProducerName,
+                Producer = movie.Producer,
                 Actors = movie.Actors
             };
             _dbContext.Movies.Add(newMovie);
             _dbContext.SaveChanges();
+            //To Keep Record of all actors in Schema Table
             var movieId = newMovie.MovieId;
             foreach (var item in newMovie.Actors)
             {
@@ -74,12 +75,6 @@ namespace IMDBAPI.Controllers
                 _dbContext.Actors_Movies.Add(actorMovie);
                 _dbContext.SaveChanges();
             }
-            var producer = new Producer()
-            {
-                ProducerName = movie.ProducerName
-            };
-            _dbContext.Producers.Add(producer);
-            _dbContext.SaveChanges();
         }
 
         // PUT api/<MoviesController>/5
@@ -92,9 +87,9 @@ namespace IMDBAPI.Controllers
                 _movie.MovieName = movie.MovieName;
                 _movie.ReleaseDate = movie.ReleaseDate;
                 _movie.Actors = movie.Actors;
-                //_movie.ProducerName = movie.ProducerName;
+                _movie.Producer = movie.Producer;
+                _dbContext.SaveChanges();
             }
-            _dbContext.SaveChanges();
         }
 
         // DELETE api/<MoviesController>/5

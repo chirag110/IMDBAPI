@@ -46,7 +46,6 @@ C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\bin\Debug\netcoreapp3.1\run
 C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\obj\Debug\netcoreapp3.1\IMDBAPI.csproj.AssemblyReference.cache
 C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\obj\Debug\netcoreapp3.1\IMDBAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\obj\Debug\netcoreapp3.1\IMDBAPI.AssemblyInfoInputs.cache
 C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\obj\Debug\netcoreapp3.1\IMDBAPI.AssemblyInfo.cs
@@ -71,3 +70,4 @@ C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\bin\Debug\netcoreapp3.1\run
 C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Chirag Guglani\source\repos\IMDBAPI\IMDBAPI\obj\Debug\netcoreapp3.1\IMDBAPI.csproj.AssemblyReference.cache

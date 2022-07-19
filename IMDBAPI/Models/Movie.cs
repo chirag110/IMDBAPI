@@ -14,9 +14,9 @@ namespace IMDBAPI.Models
         public DateTime ReleaseDate { get; set; }
 
         //Many TO One REL WITH PRODUCER
-        //public int ProducerId { get; set; }
+        public int ProducerId { get; set; }
         public Producer Producer { get; set; }
-        public string ProducerName { get; set; }
+        //public string ProducerName { get; set; }
 
         //Many to Many Rel between Actor and Movie
         public List<Actor_Movie> Actor_Movies { get; set; }
