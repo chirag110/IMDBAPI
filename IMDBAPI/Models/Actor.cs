@@ -8,6 +8,10 @@ namespace IMDBAPI.Models
     public class Actor
     {
         public int ActorId { get; set; }
-        public List<Movie> Movies { get; set; }
+        //public IList<Movie> Movies { get; set; }
+        public string ActorName { get; set; }
+
+        public List<Actor_Movie> Actor_Movies { get; set; }
+
     }
 }

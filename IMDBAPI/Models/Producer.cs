@@ -8,6 +8,8 @@ namespace IMDBAPI.Models
     public class Producer
     {
         public int ProducerId { get; set; }
-        public List<Movie> Movies { get; set; }
+        public string ProducerName { get; set; }
+        //One to Many Rel between Producer and Movie
+        public IList<Movie> Movies { get; set; }
     }
 }
