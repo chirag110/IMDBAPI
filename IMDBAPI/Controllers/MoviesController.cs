@@ -16,7 +16,7 @@ namespace IMDBAPI.Controllers
     public class MoviesController : ControllerBase
     {
         private IMDBApiContext _dbContext;
-    
+
         public MoviesController(IMDBApiContext dbContext)
         {
             _dbContext = dbContext;
@@ -31,7 +31,7 @@ namespace IMDBAPI.Controllers
                 ReleaseDate = movie.ReleaseDate,
                 ActorNames = movie.Actor_Movies.Select(x => x.Actor.ActorName).ToList(),
                 ProducerName = movie.Producer.ProducerName
-            }).ToList() ;
+            }).ToList();
             return movies;
         }
 
@@ -47,7 +47,7 @@ namespace IMDBAPI.Controllers
                 ProducerName = movie.Producer.ProducerName
             }).FirstOrDefault();
             return movie;
-            
+
         }
 
         // POST api/<MoviesController>
@@ -82,13 +82,35 @@ namespace IMDBAPI.Controllers
         public void Put(int id, [FromBody] MovieVMAdd movie)
         {
             var _movie = _dbContext.Movies.FirstOrDefault(x => x.MovieId == id);
-            if(_movie != null)
+            //var _actorMovie = _dbContext.Actors_Movies.FirstOrDefault(x => x.MovieId == id);
+            
+
+            if (_movie != null)
             {
                 _movie.MovieName = movie.MovieName;
                 _movie.ReleaseDate = movie.ReleaseDate;
+
+
+                //_dbContext.RemoveRange(_actorMovie);
+                //_dbContext.SaveChanges();
+                //var movieId = id;
+                //foreach (var item in movie.Actors)
+                //{
+                //    var actorMovie = new Actor_Movie()
+                //    {
+                //        ActorId = item.ActorId,
+                //        MovieId = movieId
+                //    };
+                //    _dbContext.Actors_Movies.Add(actorMovie);
+                //    _dbContext.SaveChanges();
+                //}
+
+
                 _movie.Actors = movie.Actors;
                 _movie.Producer = movie.Producer;
                 _dbContext.SaveChanges();
+                
+
             }
         }
 
@@ -99,3 +121,4 @@ namespace IMDBAPI.Controllers
         }
     }
 }
+
