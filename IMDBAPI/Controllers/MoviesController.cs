@@ -82,7 +82,6 @@ namespace IMDBAPI.Controllers
         public void Put(int id, [FromBody] MovieVMAdd movie)
         {
             var _movie = _dbContext.Movies.FirstOrDefault(x => x.MovieId == id);
-            //var _actorMovie = _dbContext.Actors_Movies.FirstOrDefault(x => x.MovieId == id);
             
 
             if (_movie != null)
@@ -91,22 +90,12 @@ namespace IMDBAPI.Controllers
                 _movie.ReleaseDate = movie.ReleaseDate;
 
 
-                //_dbContext.RemoveRange(_actorMovie);
-                //_dbContext.SaveChanges();
-                //var movieId = id;
-                //foreach (var item in movie.Actors)
-                //{
-                //    var actorMovie = new Actor_Movie()
-                //    {
-                //        ActorId = item.ActorId,
-                //        MovieId = movieId
-                //    };
-                //    _dbContext.Actors_Movies.Add(actorMovie);
-                //    _dbContext.SaveChanges();
-                //}
+                _dbContext.Actors_Movies
+                .Where(p => p.MovieId == id)
+                .ToList()
+                .ForEach(x => x.Actor = movie.Actors.FirstOrDefault());
 
-
-                _movie.Actors = movie.Actors;
+                //_movie.Actors = movie.Actors;
                 _movie.Producer = movie.Producer;
                 _dbContext.SaveChanges();
                 
